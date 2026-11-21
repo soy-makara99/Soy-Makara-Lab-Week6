@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        background-color: ghostwhite;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 5rem;
+      }
+      .container > div {
+        display: grid;
+        grid-template-columns: 150px minmax(0, 1fr);
+      }
+      .container > div > input,
+      .container > div > label {
+        font-size: 2rem;
+      }
+      .container > section {
+        font-size: 2rem;
+      }
+      .container > section > input {
+        font-size: 2rem;
+      }
+      .container > button {
+        border-radius: 20px;
+        background-color: blueviolet;
+        padding: 5px;
+        cursor: pointer;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="container">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" placeholder="username" id="username" required />
+      </div>
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" placeholder="age" id="age" />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" placeholder="email" id="email" required />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="password" id="password" required />
+      </div>
+      <section>
+        <label>Gender:</label>
+        <label for="M">M</label>
+        <input type="radio" value="M" name="gender" id="M" />
+        <label for="F">F</label>
+        <input type="radio" value="F" name="gender" id="F" />
+      </section>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 30%;
+        grid-template-areas:
+          "header header"
+          "main-content sidebar"
+          "footer footer";
+        gap: 15px;
+      }
+      .container div:nth-child(2) {
+        background-color: #f5f5f4;
+        margin-left: 15px;
+        grid-area: main-content;
+      }
+      .container div:nth-child(3) {
+        background-color: #dddddd;
+        margin-right: 15px;
+        grid-area: sidebar;
+      }
+      .container > div > p {
+        margin-left: 10px;
+      }
+      .container div:nth-child(1),
+      .container div:nth-child(4) {
+        background-color: #333232;
+        color: white;
+        text-align: center;
+      }
+      .container div:nth-child(1) {
+        grid-area: header;
+      }
+      .container div:nth-child(4) {
+        grid-area: footer;
+      }
+      @media screen and (max-width: 900px) {
+        .container {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .container {
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-areas:
+            "header"
+            "main-content"
+            "sidebar"
+            "footer";
+        }
+        .container div:nth-child(2) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .container div:nth-child(3) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div><h2>Responsive Header</h2></div>
+      <div><p>Main Content</p></div>
+      <div><p>Sidebar</p></div>
+      <div><h2>Footer</h2></div>
+    </div>
+  </body>
+</html>
